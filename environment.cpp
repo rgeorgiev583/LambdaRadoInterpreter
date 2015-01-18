@@ -9,14 +9,14 @@
 
 void Environment::cloneAll()
 {
-	for (EnvironmentIterator it = begin(); it != end(); it++)
+	for (Environment::iterator it = begin(); it != end(); it++)
 		if ((*it).second)
 			(*it).second = (*it).second->clone();
 }
 
 void Environment::destroy()
 {
-	for (EnvironmentIterator it = begin(); it != end(); it++)
+	for (Environment::iterator it = begin(); it != end(); it++)
 		delete (*it).second;
 }
 

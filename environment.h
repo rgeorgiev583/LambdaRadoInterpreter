@@ -13,9 +13,6 @@
 #include "value.h"
 
 
-typedef std::map<Identifier, Value*>::iterator EnvironmentIterator;
-typedef std::map<Identifier, Value*>::const_iterator ConstEnvironmentIterator;
-
 class Environment: public std::map<Identifier, Value*>
 {
 	void cloneAll();

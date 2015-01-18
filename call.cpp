@@ -11,6 +11,7 @@
 #include "identifier.h"
 #include "value.h"
 #include "environment.h"
+#include "lambda.h"
 #include <map>
 #include <cstring>
 
@@ -38,7 +39,7 @@ Call::Call(const char*& code): Value(VALUE_CALL)
 
 Value* Call::execute(Environment& environment) const
 {
-	EnvironmentIterator eit = environment.find(name);
+	Environment::iterator eit = environment.find(name);
 	Lambda* lambda = NULL;
 
 	if (eit != environment.end())
