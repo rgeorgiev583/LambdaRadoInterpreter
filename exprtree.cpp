@@ -144,7 +144,8 @@ ExpressionTree ExpressionTree::createExpressionTree(const char*& expr)
 			Identifier id(name);
 
 			if (!id.getName().empty())
-				rstack.push(ExpressionTree(gotoToken(name, " \t\n\r") && *name == '(' ? (Token*) new Call(expr) : (Token*) new Identifier(expr)));
+				rstack.push(ExpressionTree(gotoToken(name, " \t\n\r") && *name == '(' ?
+						(Token*) new Call(expr) : (Token*) new Identifier(expr)));
 		}
 		else
 		{
