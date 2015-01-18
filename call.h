@@ -10,7 +10,6 @@
 
 #include "identifier.h"
 #include "exprtree.h"
-#include "lambda.h"
 #include "environment.h"
 #include <vector>
 #include <map>
@@ -19,9 +18,6 @@ class Call: public Value
 {
 	Identifier name;
 	std::vector<ExpressionTree> arguments;
-
-	void create(const char*&);
-	void assignLambda(Environment&);
 
 public:
 	Call(): Value(VALUE_CALL) {}
