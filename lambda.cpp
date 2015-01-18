@@ -48,7 +48,7 @@ Lambda::Lambda(const char*& code): Value(VALUE_LAMBDA)
 	else
 	{
 		code++;
-		body = Statement::createStatement(code);
+		body = Statement::create(code);
 	}
 }
 
