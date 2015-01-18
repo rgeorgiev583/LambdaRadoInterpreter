@@ -16,6 +16,11 @@ String::String(const char*& code): Value(VALUE_STRING)
 
 	if (*code == '"')
 		code++;
+	else
+	{
+		type = VALUE_INVALID;
+		return;
+	}
 
 	size_t len = strcspn(code, "\"");
 	str = std::string(code, len);
