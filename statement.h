@@ -28,13 +28,14 @@ protected:
 	STATEMENT_TYPE type;
 
 public:
-	static Statement* createStatement(const char*&);
+	static Statement* create(const char*&);
 
 	Statement(STATEMENT_TYPE _type = STATEMENT_INVALID): type(_type) {}
 
 	virtual Statement* clone() const = 0;
 
 	STATEMENT_TYPE getStatementType() const { return type; }
+
 	virtual Value* execute(Environment&) const = 0;
 };
 

@@ -39,7 +39,7 @@ CompoundStatement::CompoundStatement(const char*& code): Statement(STATEMENT_COM
 	code++;
 
 	while (gotoToken(code, "; \t\n\r") && *code != '}')
-		body.push_back(Statement::createStatement(code));
+		body.push_back(Statement::create(code));
 
 	if (*code != '}')
 		type = STATEMENT_INVALID;
