@@ -77,7 +77,7 @@ Value* ExpressionTree::evaluateExpression(ExpressionTreeConstIterator it, Enviro
 		switch (((Value*) (*it))->getValueType())
 		{
 		case VALUE_IDENTIFIER:
-			return environment[*((Identifier*) (*it))]->clone();
+			return environment.at(*((Identifier*) (*it)))->clone();
 
 		case VALUE_CALL:
 			return ((Call*) (*it))->execute(environment);
